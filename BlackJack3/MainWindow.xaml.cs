@@ -122,9 +122,9 @@ namespace BlackJack3
                 txtOsszeg.Text = osszeg.ToString();
                 Uzenet("Döntetlen! \n Új játék ugyanazzal a téttel?", "Döntgetlen!");
             }
-            if (sumOpont > sumJpont)
+            if (sumOpont > sumJpont && sumOpont <= 21)
             {
-
+                Uzenet("Az osztó nyert! \n Új játék ugyanazzal a téttel?", "Vesztettél!");
             }
 
 
