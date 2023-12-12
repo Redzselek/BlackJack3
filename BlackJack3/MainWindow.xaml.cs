@@ -69,6 +69,7 @@ namespace BlackJack3
         private void Nullazo()
         {
             JhanyadikLap = 0;
+            OhanyadikLap = 0;
             JImg1.Source = null;
             JImg2.Source = null;
             JImg3.Source = null;
@@ -114,22 +115,22 @@ namespace BlackJack3
             {
                 osszeg += 2 * tet;
                 txtOsszeg.Text = osszeg.ToString();
-                Uzenet("Nyertél " + (2 * tet) + " forintot!\n Új játék ugyanazzal a téttel?", "Nyertél!");
+                Uzenet("Nyertél " + (2 * tet) + " forintot!\nÚj játék ugyanazzal a téttel?", "Nyertél!");
             }
-            if (sumJpont == sumOpont)
+            else
             {
-                osszeg += tet;
-                txtOsszeg.Text = osszeg.ToString();
-                Uzenet("Döntetlen! \n Új játék ugyanazzal a téttel?", "Döntgetlen!");
+                if (sumJpont == sumOpont)
+                {
+                    osszeg += tet;
+                    txtOsszeg.Text = osszeg.ToString();
+                    Uzenet("Döntetlen! \nÚj játék ugyanazzal a téttel?", "Döntgetlen!");
+                    if (sumOpont > sumJpont && sumOpont <= 21)
+                    {
+                        Uzenet("Az osztó nyert! \nÚj játék ugyanazzal a téttel?", "Vesztettél!");
+                    }
+                }
             }
-            if (sumOpont > sumJpont && sumOpont <= 21)
-            {
-                Uzenet("Az osztó nyert! \n Új játék ugyanazzal a téttel?", "Vesztettél!");
-            }
-
-
         }
-
         private void UjJatek()
         {
             Nullazo();
@@ -156,13 +157,28 @@ namespace BlackJack3
                 sr.Close();
                 LapElehelyezes(lapok[vel], pontok[vel], "OImg1");
                 OhanyadikLap++;
-                vel = rnd.Next(0, 51);
+                lapok[vel] = "";
+                do
+                {
+                    vel = rnd.Next(0, 51);
+                } while (lapok[vel] == "");
+
                 LapElehelyezes(lapok[vel], pontok[vel], "JImg1");
                 JhanyadikLap++;
-                vel = rnd.Next(0, 51);
+                lapok[vel] = "";
+                do
+                {
+                    vel = rnd.Next(0, 51);
+                } while (lapok[vel] == "");
+
                 LapElehelyezes(lapok[vel], pontok[vel], "OImg2");
                 OhanyadikLap++;
-                vel = rnd.Next(0, 51);
+                lapok[vel] = "";
+                do
+                {
+                    vel = rnd.Next(0, 51);
+                } while (lapok[vel] == "");
+
                 LapElehelyezes(lapok[vel], pontok[vel], "JImg2");
                 JhanyadikLap++;
                 tet = Convert.ToInt32(TxtTet.Text);

@@ -149,5 +149,11 @@
     <Resource Include="cards\queen_of_hearts2.png" />
     <Resource Include="cards\queen_of_spades2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cards\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="background.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
