@@ -1,0 +1,61 @@
+﻿<Window x:Class="BlackJack3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackJack3"
+        mc:Ignorable="d"
+        Title="BlackJack" Height="720" Width="1280" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="123*"/>
+            <ColumnDefinition Width="872*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.ColumnSpan="2" Margin="0,0,0.2,0.2">
+            <Label FontSize="20" FontWeight="Bold" HorizontalAlignment="Left">Osztó</Label>
+            <TextBlock FontSize="16" FontWeight="Bold" HorizontalAlignment="Right">Összeg: <TextBlock x:Name="txtOsszeg" Margin="0,0,10,0">10000</TextBlock></TextBlock>
+        </DockPanel>
+        <WrapPanel Margin="0,35,0.2,0.2" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center">
+            <Image x:Name="OImg1" Margin="5,0"></Image>
+            <Image x:Name="OImg2" Margin="5,0"></Image>
+            <Image x:Name="OImg3" Margin="5,0"></Image>
+            <Image x:Name="OImg4" Margin="5,0"></Image>
+            <Image x:Name="OImg5" Margin="5,0"></Image>
+            <Image x:Name="OImg6" Margin="5,0"></Image>
+            <Image x:Name="OImg7" Margin="5,0"></Image>
+            <Image x:Name="OImg8" Margin="5,0"></Image>
+            <Image x:Name="OImg9" Margin="5,0"></Image>
+            <Label x:Name="Opont" Content="0" Margin="10"/>
+        </WrapPanel>
+        <Label FontSize="20" FontWeight="Bold" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,139.8,0.2,0.4" Grid.RowSpan="2">Jatékos</Label>
+        <WrapPanel Grid.Row="2" Margin="0,34.8,0.2,34.8" Grid.ColumnSpan="2" Grid.RowSpan="3" HorizontalAlignment="Center">
+            <Image x:Name="JImg1" Margin="5,0"></Image>
+            <Image x:Name="JImg2" Margin="5,0"></Image>
+            <Image x:Name="JImg3" Margin="5,0"></Image>
+            <Image x:Name="JImg4" Margin="5,0"></Image>
+            <Image x:Name="JImg5" Margin="5,0"></Image>
+            <Image x:Name="JImg6" Margin="5,0"></Image>
+            <Image x:Name="JImg7" Margin="5,0"></Image>
+            <Image x:Name="JImg8" Margin="5,0"></Image>
+            <Image x:Name="JImg9" Margin="5,0"></Image>
+            <Label x:Name="Jpont" Content="0" Margin="10"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="4" Grid.ColumnSpan="2" Margin="5,5,5,30" Grid.RowSpan="2">
+            <Label FontSize="16" FontWeight="Bold" >Tét:</Label>
+            <TextBox Name="TxtTet" FontSize="16" Margin="0,5,0,0" Width="120" TextAlignment="Right">100</TextBox>
+        </WrapPanel>
+        <WrapPanel Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="278.962,5.2,402.2,5">
+            <Button x:Name="btnHit" Content="Lap" Width="75" FontSize="16" Margin="10,0" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnHit_Click"/>
+            <Button x:Name="btnStand" Content="Megáll" Width="75" FontSize="16" Margin="10,0" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnStand_Click"/>
+
+        </WrapPanel>
+    </Grid>
+</Window>
